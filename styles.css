@@ -1,0 +1,293 @@
+/* Estilos generales */
+body {
+    background: linear-gradient(to right, #74ebd5, #9face6);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+    display: flex;
+    flex-direction: column; /* Para posicionar el footer al final */
+}
+
+/* Contenedor principal */
+.container {
+    flex: 1; /* Ocupa el espacio disponible entre header y footer */
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5em;
+}
+
+/* Formulario */
+#task-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#task-form input,
+#task-form select,
+#task-form button {
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Mejora del botón "Agregar" */
+#task-form button {
+    padding: 15px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6b6b, #f94d6a);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s, box-shadow 0.3s;
+    border-radius: 25px; /* Bordes más redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+#task-form button:hover {
+    background: linear-gradient(45deg, #ff5a5a, #e94459);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+#task-form button:active {
+    transform: scale(0.96);
+}
+
+.button-icon {
+    font-size: 22px;
+    line-height: 1;
+}
+
+/* Campo de entrada y select */
+#task-form input {
+    flex: 2 1 200px;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#task-form input:focus {
+    border-color: #5b9bd5;
+}
+
+#task-form select {
+    flex: 1 1 100px;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#task-form select:focus {
+    border-color: #5b9bd5;
+}
+
+/* Contenedor de filtro */
+#filter-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#filter-container label {
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+#filter-select {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px; /* Bordes redondeados */
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#filter-select:focus {
+    border-color: #5b9bd5;
+}
+
+/* Lista de tareas */
+#task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#task-list li {
+    background: #fff;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-left: 5px solid #5b9bd5;
+    border-radius: 10px; /* Bordes más redondeados */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#task-list li:hover {
+    background: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#task-list li.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+/* Texto de la tarea */
+.task-text {
+    flex: 1 1 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.task-text span {
+    display: inline-block;
+}
+
+/* Fecha de la tarea */
+#task-list li small {
+    display: block;
+    color: #888;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+/* Acciones de la tarea */
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.task-actions button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 50%; /* Botones circulares */
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.task-actions button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.task-actions button:active {
+    transform: scale(0.95);
+}
+
+.task-actions button.complete {
+    color: #28a745;
+}
+
+.task-actions button.delete {
+    color: #dc3545;
+}
+
+.task-actions button.edit {
+    color: #ffc107;
+}
+
+/* Etiquetas */
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #6c757d;
+}
+
+/* Prioridad */
+.priority {
+    font-weight: bold;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+.priority.Alta {
+    background-color: #dc3545;
+}
+
+.priority.Media {
+    background-color: #ffc107;
+    color: #333;
+}
+
+.priority.Baja {
+    background-color: #28a745;
+}
+
+/* Ajustes responsivos */
+@media (min-width: 600px) {
+    .task-text {
+        flex: 1 1 auto;
+        margin-bottom: 0;
+    }
+}
+
+/* Estilos para el footer */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+footer a {
+    display: block;
+    padding: 20px 0;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Fondo con degradado en el footer */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    z-index: 0;
+}

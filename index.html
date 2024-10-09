@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tareas Mejorada</title>
+    <!-- Importar las fuentes desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Lista de Tareas</h1>
+
+        <!-- Formulario para agregar tareas -->
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Agregar una nueva tarea" autocomplete="off" required>
+
+            <!-- Selección de etiqueta -->
+            <select id="tag-select">
+                <option value="" disabled selected>Etiqueta</option>
+                <option value="Personal">Personal</option>
+                <option value="Trabajo">Trabajo</option>
+                <option value="Urgente">Urgente</option>
+                <option value="Otro">Otro</option>
+            </select>
+
+            <!-- Selección de prioridad (ordenada de Alta a Baja) -->
+            <select id="priority-select">
+                <option value="Alta" selected>Prioridad Alta</option>
+                <option value="Media">Prioridad Media</option>
+                <option value="Baja">Prioridad Baja</option>
+            </select>
+
+            <!-- Botón "Agregar" mejorado con icono -->
+            <button type="submit"><span class="button-icon">+</span> Agregar</button>
+        </form>
+
+        <!-- Contenedor para el filtro -->
+        <div id="filter-container">
+            <label for="filter-select">Filtrar por etiqueta:</label>
+            <select id="filter-select">
+                <option value="Todas" selected>Todas</option>
+                <option value="Personal">Personal</option>
+                <option value="Trabajo">Trabajo</option>
+                <option value="Urgente">Urgente</option>
+                <option value="Otro">Otro</option>
+            </select>
+        </div>
+
+        <!-- Lista de tareas -->
+        <ul id="task-list"></ul>
+    </div>
+
+    <!-- Banner en el pie de página -->
+    <footer>
+        <a href="https://github.com/AlejandroCreador" target="_blank" rel="noopener noreferrer">
+            Creado por: Alejandro D. A.
+        </a>
+    </footer>
+
+    <!-- Incluir Sortable.js para arrastrar y soltar -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.14.0/Sortable.min.js"></script>
+    <!-- Enlace al archivo JavaScript -->
+    <script src="app.js"></script>
+</body>
+</html>
