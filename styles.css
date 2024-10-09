@@ -4,15 +4,15 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column; /* Para posicionar el footer al final */
+    flex-direction: column;
 }
 
-/* Contenedor principal */
 .container {
-    flex: 1; /* Ocupa el espacio disponible entre header y footer */
+    flex: 1;
     max-width: 600px;
+    width: 90%; /* Ajuste para móviles */
     margin: 50px auto;
     padding: 30px;
     background: rgba(255, 255, 255, 0.9);
@@ -20,13 +20,12 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Título */
 h1 {
     text-align: center;
     color: #333;
     margin-bottom: 30px;
     font-family: 'Poppins', sans-serif;
-    font-size: 2.5em;
+    font-size: 2.2em;
 }
 
 /* Formulario */
@@ -40,12 +39,30 @@ h1 {
 #task-form input,
 #task-form select,
 #task-form button {
-    border-radius: 10px; /* Bordes redondeados */
+    border-radius: 10px;
 }
 
-/* Mejora del botón "Agregar" */
+#task-form input {
+    flex: 1 1 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#task-form select {
+    flex: 1 1 calc(50% - 10px);
+    padding: 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
 #task-form button {
-    padding: 15px 25px;
+    flex: 1 1 100%;
+    padding: 15px;
     font-size: 18px;
     font-weight: bold;
     background: linear-gradient(45deg, #ff6b6b, #f94d6a);
@@ -53,12 +70,22 @@ h1 {
     border: none;
     cursor: pointer;
     transition: background 0.3s, transform 0.1s, box-shadow 0.3s;
-    border-radius: 25px; /* Bordes más redondeados */
+    border-radius: 25px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+.button-icon {
+    font-size: 22px;
+    line-height: 1;
+}
+
+#task-form input:focus,
+#task-form select:focus {
+    border-color: #5b9bd5;
 }
 
 #task-form button:hover {
@@ -70,55 +97,25 @@ h1 {
     transform: scale(0.96);
 }
 
-.button-icon {
-    font-size: 22px;
-    line-height: 1;
-}
-
-/* Campo de entrada y select */
-#task-form input {
-    flex: 2 1 200px;
-    padding: 15px;
-    font-size: 16px;
-    border: 2px solid #ddd;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-#task-form input:focus {
-    border-color: #5b9bd5;
-}
-
-#task-form select {
-    flex: 1 1 100px;
-    padding: 15px;
-    font-size: 16px;
-    border: 2px solid #ddd;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-#task-form select:focus {
-    border-color: #5b9bd5;
-}
-
 /* Contenedor de filtro */
 #filter-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     margin-bottom: 20px;
+    gap: 10px;
 }
 
 #filter-container label {
-    margin-right: 10px;
     font-size: 16px;
 }
 
 #filter-select {
+    flex: 1 1 100%;
     padding: 10px;
     font-size: 16px;
     border: 2px solid #ddd;
-    border-radius: 10px; /* Bordes redondeados */
+    border-radius: 10px;
     outline: none;
     transition: border-color 0.3s;
 }
@@ -140,11 +137,9 @@ h1 {
     margin-bottom: 15px;
     font-size: 18px;
     border-left: 5px solid #5b9bd5;
-    border-radius: 10px; /* Bordes más redondeados */
+    border-radius: 10px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     transition: background 0.3s, box-shadow 0.3s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -159,40 +154,40 @@ h1 {
     opacity: 0.7;
 }
 
-/* Texto de la tarea */
 .task-text {
-    flex: 1 1 100%;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .task-text span {
     display: inline-block;
 }
 
-/* Fecha de la tarea */
 #task-list li small {
-    display: block;
     color: #888;
-    margin-top: 5px;
     font-size: 14px;
+    text-align: left;
+    margin-bottom: 10px;
 }
 
 /* Acciones de la tarea */
 .task-actions {
     display: flex;
-    gap: 10px;
+    gap: 20px;
+    justify-content: center;
+    margin-top: auto;
 }
 
 .task-actions button {
     cursor: pointer;
     background: none;
     border: none;
-    font-size: 18px;
+    font-size: 24px;
     padding: 8px;
-    border-radius: 50%; /* Botones circulares */
+    border-radius: 50%;
     transition: background-color 0.3s, transform 0.1s;
 }
 
@@ -248,14 +243,6 @@ h1 {
     background-color: #28a745;
 }
 
-/* Ajustes responsivos */
-@media (min-width: 600px) {
-    .task-text {
-        flex: 1 1 auto;
-        margin-bottom: 0;
-    }
-}
-
 /* Estilos para el footer */
 footer {
     position: relative;
@@ -290,4 +277,38 @@ footer::before {
     bottom: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
     z-index: 0;
+}
+
+/* Media Queries para pantallas más grandes */
+@media (min-width: 600px) {
+    .container {
+        width: 80%; /* Ajuste para tablets */
+    }
+
+    #task-form input {
+        flex: 2 1 200px;
+    }
+
+    #task-form select {
+        flex: 1 1 100px;
+    }
+
+    #task-form button {
+        flex: 1 1 auto;
+    }
+
+    #filter-container {
+        flex-wrap: nowrap;
+    }
+
+    #filter-select {
+        flex: none;
+        width: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 70%; /* Ajuste para pantallas aún más grandes */
+    }
 }
